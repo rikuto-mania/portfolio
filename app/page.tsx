@@ -1,9 +1,20 @@
 import Image from "next/image";
+import { ParticleWave } from "./component/ParticleWave";
 import { WorkCard } from "./component/Workcard";
 
 export default function Home() {
   return (
-    <div className="px-4 lg:px-8">
+    <div className="">
+      <section className="pb-15">
+        <div className="relative h-screen overflow-hidden">
+          <ParticleWave />
+          <div className="w-full h-full flex flex-col items-center justify-center">
+            <p className="text-3xl md:text-5xl font-semibold pb-2">Hi I'm RIKUTO</p>
+            <p className="text-2xl">Welcome to My Portfolio!!</p>
+          </div>
+        </div>
+      </section>
+
       <section>
         <h2 className="text-center text-5xl font-bold pb-12">WORKS</h2>
 
