@@ -5,10 +5,10 @@ export const NextIcon = () =>{
             <path fill="url(#SVGffgZzcDK)" d="M81.778 38.4h8.533v51.2h-8.533z"/>
             <defs>
                 <linearGradient id="SVGt8hikeFb" x1="109" x2="144.5" y1="116.5" y2="160.5" gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                    <stop stopColor="#fff"/><stop offset="1" stopColor="#fff" stopOpacity="0"/>
                 </linearGradient>
                 <linearGradient id="SVGffgZzcDK" x1="121" x2="120.799" y1="54" y2="106.875" gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                    <stop stopColor="#fff"/><stop offset="1" stopColor="#fff" stopOpacity="0"/>
                     </linearGradient>
             </defs>
         </svg>
