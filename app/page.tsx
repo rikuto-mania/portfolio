@@ -2,7 +2,25 @@ import Image from "next/image";
 import { ParticleWave } from "./component/ParticleWave";
 import { WorkCard } from "./component/Workcard";
 
+import {HTML,CSS,JS,TS,React,NextJS,Tailwind,PHP,Mysql,Laravel} from "./component/icon/skillIcons/index"
+import { SkillCard } from "./component/SkillCard";
+
+
 export default function Home() {
+  const skills = [
+    {icon:"HTML",name:"HTML"},
+    {icon:"CSS",name:"CSS"},
+    {icon:"JS",name:"JavaScript"},
+    {icon:"TS",name:"TypeScript"},
+    {icon:"React",name:"React"},
+    {icon:"NextJS",name:"NextJS"},
+    {icon:"Tailwind",name:"Tailwind"},
+    {icon:"PHP",name:"PHP"},
+    {icon:"Laravel",name:"Laravel"},
+    {icon:"Mysql",name:"Mysql"},
+  ] as const;
+
+
   return (
     <div className="min-h-screen">
       <section className="pb-30">
@@ -26,6 +44,23 @@ export default function Home() {
             Web分野に興味があり将来はフロントエンドエンジニアとして活躍したいと考えております。<br/>
             現在はフロントエンドだけではなくバックエンドも勉強中です。
           </p>
+        </div>
+      </section>
+
+
+      <section className="py-15">
+        <p className="text-center text-5xl font-bold pb-12">SKILLS</p>
+
+        <div className="grid gap-5 max-w-4xl mx-auto grid-cols-3 md:grid-cols-6 lg:grid-cols-7 px-8">
+          {skills.map((skill) =>{
+            return(
+              <SkillCard 
+                key={skill.name}
+                icon={skill.icon} 
+              name={skill.name}
+              />
+            )
+          })}
         </div>
       </section>
 
