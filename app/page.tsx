@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="px-8 py-15">
         <p className="text-center text-5xl font-bold pb-12">WORKS</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
