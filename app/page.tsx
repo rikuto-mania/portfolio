@@ -4,8 +4,8 @@ import { WorkCard } from "./component/Workcard";
 
 export default function Home() {
   return (
-    <div className="">
-      <section className="pb-15">
+    <div className="min-h-screen">
+      <section className="pb-30">
         <div className="relative h-screen overflow-hidden">
           <ParticleWave />
           <div className="w-full h-full flex flex-col items-center justify-center">
@@ -15,8 +15,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="flex flex-col md:flex-row items-center xl:max-w-4xl mx-auto px-8 gap-9 py-30">
+        <div className="bg-[#00152d] pl-4 pb-4">
+          <Image src={"/rikuto-mania01.PNG"} alt="rikuto" width={520} height={600} className="bg-blue-950 pt-4 pr-4" />
+        </div>
+        <div className="">
+          <p className="text-5xl font-bold pb-9">ABOUT ME</p>
+          <p>こんにちは。河野陸人(こうの りくと)と申します。<br/>
+            ECCコンピュータ専門学校 IT開発エキスパートコース在学。
+            Web分野に興味があり将来はフロントエンドエンジニアとして活躍したいと考えております。<br/>
+            現在はフロントエンドだけではなくバックエンドも勉強中です。
+          </p>
+        </div>
+      </section>
+
       <section>
-        <h2 className="text-center text-5xl font-bold pb-12">WORKS</h2>
+        <p className="text-center text-5xl font-bold pb-12">WORKS</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
           <WorkCard 
