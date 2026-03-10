@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaGlobe ,FaGithub} from "react-icons/fa";
 interface WorkCardProps{
     title:string;
@@ -20,7 +21,7 @@ export const WorkCard = (props:WorkCardProps) =>{
             <div className="flex flex-wrap gap-2 py-4">
                 {props.technologies.map((tech) =>{
                     return(
-                        <p className="px-3 py-1 border border-white text-white rounded-full">{tech}</p>
+                        <p key={tech} className="px-3 py-1 border border-white text-white rounded-full">{tech}</p>
                     );
                 })}
             </div>
@@ -28,16 +29,20 @@ export const WorkCard = (props:WorkCardProps) =>{
             <div className="flex flex-col mt-auto">
                 <div className="flex text-white gap-4">
                     {props.githubUrl &&(
-                        <div className="flex items-center">
-                            <FaGithub size={16}/>
-                            <p className="pl-1">Githubをみる</p>
-                        </div>
+                        <Link href={props.githubUrl}>
+                            <div className="flex items-center">
+                                <FaGithub size={16}/>
+                                <p className="pl-1">Githubをみる</p>
+                            </div>
+                        </Link>
                     )}
                     {props.liveUrl &&(
-                        <div className="flex items-center">
-                            <FaGlobe size={16}/>
-                            <p className="pl-1">サイトを見る</p>
-                        </div>
+                        <Link href={props.liveUrl}>
+                            <div className="flex items-center">
+                                <FaGlobe size={16}/>
+                                <p className="pl-1">サイトを見る</p>
+                            </div>
+                        </Link>
                     )}
                 </div>
             </div>
