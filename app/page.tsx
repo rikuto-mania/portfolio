@@ -34,7 +34,6 @@ export default function Home() {
       description:"プラスチック削減プロジェクトSWAPの公式ホームページ",
       image:"/swapWeb_image.png",
       technologies:["Nextjs","postgresql","Prisma"],
-      liveUrl:"/"
     },
     {
       title:"Grease Trace",
@@ -48,7 +47,6 @@ export default function Home() {
       description:"訪日留学生向けに作成したWebサービス。AI診断であなたにあった最適な進路を提案！",
       image:"/edurouteJAPAN_image.png",
       technologies:["PHP","Laravel","Mysql","Docker","JavaScript"],
-      liveUrl:"/",
       githubUrl:"https://github.com/ryugaku-navi-team/ryugaku-navi-ai"
     },
     {
