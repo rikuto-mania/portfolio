@@ -37,6 +37,13 @@ export default function Home() {
       liveUrl:"/"
     },
     {
+      title:"Grease Trace",
+      description:"遠隔での共同作業において 「説明が伝わらない」ことで生じるもどかしさを解消する、リアルタイム描画共有ツール",
+      image:"/Trace.png",
+      technologies:["Go","React","Docker","Rust","linux"],
+      githubUrl:"https://github.com/Dietary-fibari-hiroto/GreaseTrace-frontend"
+    },
+    {
       title:"Eduroute JAPAN",
       description:"訪日留学生向けに作成したWebサービス。AI診断であなたにあった最適な進路を提案！",
       image:"/edurouteJAPAN_image.png",
@@ -50,6 +57,13 @@ export default function Home() {
       image:"/portfolio.png",
       technologies:["Nextjs"],
       githubUrl:"https://github.com/rikuto-mania/portfolio"
+    },
+    {
+      title:"FristChat",
+      description:"返信が遅い人に早く返信させるためのアプリ",
+      image:"/FristChat.png",
+      technologies:["React","nodejs","tailwind","Docker","Mysql"],
+      githubUrl:"https://github.com/hakyukawa"
     }
   ];
 
