@@ -21,7 +21,7 @@ export default function Home() {
   ] as const;
 
 
-  const Wooks =[
+  const Wooks = [
     {
       title:"Smart MicroClimate Control System",
       description:"自分の家庭にあった最適な室内環境を提供するIotデバイス",
@@ -77,11 +77,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col md:flex-row items-center xl:max-w-4xl mx-auto px-8 gap-9 py-30">
+      <section className="flex flex-col md:flex-row items-center xl:max-w-4xl mx-auto px-6 md:px-8 gap-9 py-30">
         <div className="bg-[#00152d] pl-4 pb-4">
           <Image src={"/rikuto-mania01.PNG"} alt="rikuto" width={520} height={600} className="bg-blue-950 pt-4 pr-4" />
         </div>
-        <div className="">
+        <div>
           <p className="text-5xl font-bold pb-9">ABOUT ME</p>
           <p>こんにちは。河野陸人(こうの りくと)と申します。<br/>
             ECCコンピュータ専門学校 IT開発エキスパートコース在学。
@@ -92,10 +92,9 @@ export default function Home() {
       </section>
 
 
-      <section className="py-15">
+      <section className="px-6 md:px-8 py-15">
         <p className="text-center text-5xl font-bold pb-12">SKILLS</p>
-
-        <div className="grid gap-5 max-w-4xl mx-auto grid-cols-3 md:grid-cols-6 lg:grid-cols-7 px-8">
+        <div className="grid gap-5 max-w-4xl mx-auto grid-cols-3 md:grid-cols-6 lg:grid-cols-7">
           {skills.map((skill) =>{
             return(
               <SkillCard 
@@ -108,12 +107,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-8 py-15">
+      <section className="px-6 md:px-8 py-15">
         <p className="text-center text-5xl font-bold pb-12">WORKS</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-
-
           {Wooks.map((wook,index) =>{
             return(
               <WorkCard
