@@ -21,6 +21,50 @@ export default function Home() {
   ] as const;
 
 
+  const Wooks =[
+    {
+      title:"Smart MicroClimate Control System",
+      description:"自分の家庭にあった最適な室内環境を提供するIotデバイス",
+      image:"/smcs_image.png",
+      technologies:["React Native","Nodejs","ESP32"],
+      githubUrl:"https://github.com/alphateam-ecc/alphateam_front"
+    },
+    {
+      title:"swap Webサイト",
+      description:"プラスチック削減プロジェクトSWAPの公式ホームページ",
+      image:"/swapWeb_image.png",
+      technologies:["Nextjs","postgresql","Prisma"],
+    },
+    {
+      title:"Grease Trace",
+      description:"遠隔での共同作業において 「説明が伝わらない」ことで生じるもどかしさを解消する、リアルタイム描画共有ツール",
+      image:"/Trace.png",
+      technologies:["Go","React","Docker","Rust","linux"],
+      githubUrl:"https://github.com/Dietary-fibari-hiroto/GreaseTrace-frontend"
+    },
+    {
+      title:"Eduroute JAPAN",
+      description:"訪日留学生向けに作成したWebサービス。AI診断であなたにあった最適な進路を提案！",
+      image:"/edurouteJAPAN_image.png",
+      technologies:["PHP","Laravel","Mysql","Docker","JavaScript"],
+      githubUrl:"https://github.com/ryugaku-navi-team/ryugaku-navi-ai"
+    },
+    {
+      title:"ポートフォリオサイト",
+      description:"ポートフォリオサイト",
+      image:"/portfolio.png",
+      technologies:["Nextjs"],
+      githubUrl:"https://github.com/rikuto-mania/portfolio"
+    },
+    {
+      title:"FristChat",
+      description:"返信が遅い人に早く返信させるためのアプリ",
+      image:"/FristChat.png",
+      technologies:["React","nodejs","tailwind","Docker","Mysql"],
+      githubUrl:"https://github.com/hakyukawa"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <section className="pb-30">
@@ -64,28 +108,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="px-8 py-15">
         <p className="text-center text-5xl font-bold pb-12">WORKS</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-          <WorkCard 
-            image="/smcs_image.png" 
-            title="Smart MicroClimate Control System" 
-            description="自分の家庭にあった最適な室内環境を提供する
-                        Iotデバイス"
-          />
 
-          <WorkCard 
-            image="/swapWeb_image.png" 
-            title="SWAP Webサイト" 
-            description="プラスチック削減プロジェクトSWAPの公式ホームページ"
-          />
 
-          <WorkCard 
-            image="/edurouteJAPAN_image.png" 
-            title="eduroute JAPAN" 
-            description="AI診断であなたに合った進路を提案する日本留学ナビサイト"
-          />
+          {Wooks.map((wook,index) =>{
+            return(
+              <WorkCard
+                key={index}
+                {...wook}
+                index={index}
+              />
+            );
+          })}
         </div>
       </section>
     </div>

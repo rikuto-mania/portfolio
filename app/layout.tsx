@@ -1,3 +1,4 @@
+import Footer from "./component/footer";
 import "./globals.css";
 
 export default function RootLayout({
@@ -9,6 +10,7 @@ export default function RootLayout({
     <html lang="jp">
       <body>
         {children}
+        <Footer />
       </body>
     </html>
   );
