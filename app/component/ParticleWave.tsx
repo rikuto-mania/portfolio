@@ -23,7 +23,7 @@ export const ParticleWave = () =>{
         renderer.setSize(window.innerWidth, window.innerHeight);
         mountRef.current.appendChild(renderer.domElement);
 
-        // 2. パーティクルの生成（BufferGeometryを使用して超高速化）
+        // 2. パーティクルの生成（BufferGeometryを使用して高速化）
         const SEPARATION = 30, AMOUNTX = 200, AMOUNTY = 150; //SEPARATION 粒と粒の隙間 AMOUNTX 横方向の粒,AMOUNTY　奥行きの粒
         const numParticles = AMOUNTX * AMOUNTY;
         const positions = new Float32Array(numParticles * 3);
@@ -46,11 +46,15 @@ export const ParticleWave = () =>{
         geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         geometry.setAttribute('scale', new THREE.BufferAttribute(scales, 1));
 
-        // カスタムシェーダーで丸い光の粒を作る（SpriteCanvasMaterialの代わり）
+        // カスタムシェーダーで丸い光の粒を作る
+         //strength(光の強さ)
         const material = new THREE.ShaderMaterial({
             uniforms: {
-            color: { value: new THREE.Color(0x00aaff) }, // 水色に変更（0xffffffで白）
+            color: { value: new THREE.Color(0xffffff) }, // 水色に変更（0xffffffで白）
             },
+            blending:THREE.AdditiveBlending,
+            transparent:true,
+            depthWrite:false,
             vertexShader: `
             attribute float scale;
             void main() {
@@ -62,8 +66,11 @@ export const ParticleWave = () =>{
             fragmentShader: `
             uniform vec3 color;
             void main() {
-                if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
-                gl_FragColor = vec4( color, 1.0 );
+                float dist = length(gl_PointCoord - vec2( 0.5 )); 
+                float strength = 1.0 -(dist * 2.0); 
+                strength = max(0.0,strength);
+                strength = pow(strength,3.0);
+                gl_FragColor = vec4( color, strength );
             }
             `
         });
