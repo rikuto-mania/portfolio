@@ -50,7 +50,7 @@ export const ParticleWave = () =>{
          //strength(光の強さ)
         const material = new THREE.ShaderMaterial({
             uniforms: {
-            color: { value: new THREE.Color(0xffffff) }, // 水色に変更（0xffffffで白）
+            color: { value: new THREE.Color(0x00aaff) }, // 水色に変更（0xffffffで白）
             },
             blending:THREE.AdditiveBlending,
             transparent:true,
@@ -59,7 +59,7 @@ export const ParticleWave = () =>{
             attribute float scale;
             void main() {
                 vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-                gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+                gl_PointSize = scale * ( 600.0 / - mvPosition.z );
                 gl_Position = projectionMatrix * mvPosition;
             }
             `,
