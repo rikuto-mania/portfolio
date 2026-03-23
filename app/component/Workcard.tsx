@@ -14,7 +14,7 @@ interface WorkCardProps{
 
 export const WorkCard = (props:WorkCardProps) =>{
     return(
-        <div className="rounded-2xl bg-[#373737] text-white p-4 flex flex-col h-full">
+        <div className="transition-all duration-300 rounded-2xl bg-[#373737] text-white p-4 flex flex-col h-full hover:shadow-xl hover:-translate-y-2">
             <Image src={props.image} alt={props.title} width={400} height={255} className="w-full pb-5 rounded-lg"/>
             <p className="md:text-xl font-semibold pb-2">{props.title}</p>
             <p className="text-sm md:text-[16px] font-light">{props.description}</p>
